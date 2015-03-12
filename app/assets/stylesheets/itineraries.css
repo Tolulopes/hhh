@@ -1,24 +1,3 @@
-/*/*.highclass {
-  height:400px;
-  background-image: url('highclass.jpg');
-  background-repeat: no-repeat;
-*/
-/*}*/
-
-/*.hipster {
-  height:400px;
-  background-image: url('hooligan.jpg');
-  background-repeat: no-repeat;
-     background-position: left bottom;
-}*/
-
-/*.hooligan {
-  height:400px;
-  background-image: url('hipster.jpg');
-  background-position: right top;
-  background-repeat: no-repeat;
-}*/
-
 .wrapper{
    position: relative;
    float: left;
@@ -26,7 +5,7 @@
    width: 1278px;
    margin-bottom: 20px;
    margin-top: 0;
-   background-color: #cccccc;
+   background-color: white;
    height: 500px;
 }
 .highclass{
@@ -66,10 +45,11 @@ body {
    padding: 0px;
    margin-top: 100px;
    font-size: 90%;
-   background-color: #e7e7de
+   background-color: white;
+   margin-left: 60px;
 }
 
-h1{
-  font-size: 30px;
+
 }
+
 
