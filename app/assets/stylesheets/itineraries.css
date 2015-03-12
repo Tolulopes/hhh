@@ -25,6 +25,7 @@
    left: 0px;
    width: 1278px;
    margin-bottom: 20px;
+   margin-top: 0;
    background-color: #cccccc;
    height: 500px;
 }
@@ -34,7 +35,7 @@
    left: 10px;
    width: 406px;
    height: 406px;
-   background-image: url('highclass.jpg');
+   background-image: url('high_class.jpg');
    background-repeat: no-repeat;
 }
 .hooligan{
@@ -62,3 +63,8 @@ body {
    font-size: 90%;
    background-color: #e7e7de
 }
+
+h1{
+  font-size: 30px;
+}
+
