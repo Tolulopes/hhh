@@ -1,0 +1,63 @@
+/*/*.highclass {
+  height:400px;
+  background-image: url('highclass.jpg');
+  background-repeat: no-repeat;
+*/
+/*}*/
+
+/*.hipster {
+  height:400px;
+  background-image: url('hooligan.jpg');
+  background-repeat: no-repeat;
+     background-position: left bottom;
+}*/
+/
+/*.hooligan {
+  height:400px;
+  background-image: url('hipster.jpg');
+  background-position: right top;
+  background-repeat: no-repeat;
+}*/
+
+.wrapper{
+   position: relative;
+   float: left;
+   left: 0px;
+   width: 1278px;
+   margin-bottom: 20px;
+   background-color: #cccccc
+}
+.highclass{
+   position: relative;
+   float: left;
+   left: 10px;
+   width: 406px;
+   height: 406px;
+   background-image: url('highclass.jpg');
+   background-repeat: no-repeat;
+}
+.hooligan{
+   position: relative;
+   float: left;
+   left: 30px;
+   width: 406px;
+   height: 406px;
+   background-image: url('hooligan1.jpg');
+   background-repeat: no-repeat;
+}
+.hipster{
+   position: relative;
+   float: left;
+   left: 50px;
+   width: 406px;
+   height: 406px;
+   background-image: url('hipster.jpg');
+   background-repeat: no-repeat;
+}
+body {
+   border-width: 0px;
+   padding: 0px;
+   margin-top: 100px;
+   font-size: 90%;
+   background-color: #e7e7de
+}
