@@ -10,12 +10,74 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-= require jquery
+//= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
+
+
+
+// function swap(high_class, hooli, hip) {
+//     document.getElementById(high_class).style.display = 'block';
+//     document.getElementById(hooli).style.display = 'none';
+//     document.getElementById(hip).style.display = 'none';
+// }
+
+// document.getElementById('.high_class').addEventListener('click',function(e){
+//     swap('high_class','hooli', 'hip');
+// });
+
+// function swap(high_class, hooli, hip) {
+//     document.getElementById(high_class).style.display = 'none';
+//     document.getElementById(hooli).style.display = 'block';
+//     document.getElementById(hip).style.display = 'none';
+// }
+
+// document.getElementById('.hooli').addEventListener('click',function(e){
+//     swap('high_class','hooli', 'hip');
+// });
+
+// function swap(high_class, hooli, hip) {
+//     document.getElementById(high_class).style.display = 'none';
+//     document.getElementById(hooli).style.display = 'none';
+//     document.getElementById(hip).style.display = 'block';
+// }
+
+// document.getElementById('.hip').addEventListener('click',function(e){
+//     swap('high_class','hooli', 'hip');
+// });
+
+
+
+
+
+
+
+
+
 $(document).ready(function(){
+
+  $(".high_class").click(function(){
+      console.log('clicked')
+      $(".hip").hide();
+      $('.hooli').hide();
+  });
+
+  $(".hip").click(function(){
+      console.log('clicked')
+      $(".high_class").hide();
+      $('.hooli').hide();
+  });
+
+  $(".hooli").click(function(){
+      console.log('clicked')
+      $(".hip").hide();
+      $('.high_class').hide();
+  });
+
+
+
       // console.log('working');
             //declare some variables
       var getRegionButton = $('#region-button');
