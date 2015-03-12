@@ -1,27 +1,35 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
 
-<h1>Listing Itineraries</h1>
+<div class="wrapper">
+  <div class="high_class">
+   <!--  <h1>HighClass</h1> -->
+   <!--  <a href="#"> -->
+      <div class="highclass">
+      </div>
+    <!-- </a> -->
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Days</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="hooli">
+   <!--  <h1>Hooligan</h1> -->
+    <!-- <a href="#"> -->
+      <div class="hooligan">
+      </div>
+   <!--  </a> -->
+  </div>
 
-  <tbody>
-    <% @itineraries.each do |itinerary| %>
-      <tr>
-        <td><%= itinerary.days %></td>
-        <td><%= link_to 'Show', itinerary %></td>
-        <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
-        <td><%= link_to 'Destroy', itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Itinerary', new_itinerary_path %>
+  <div class="hip">
+<!--     <h1>Hipster</h1> -->
+   <!--  <a href="#"> -->
+      <div class="hipster">
+      </div>
+   <!--  </a> -->
+  </div>
+</div>
+<body>
+  </html>
