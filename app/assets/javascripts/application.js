@@ -15,147 +15,150 @@
 //= require turbolinks
 //= require_tree .
 
+dates = function () {
+  $('#date').datepicker(); 
 
-
-
-// function swap(high_class, hooli, hip) {
-//     document.getElementById(high_class).style.display = 'block';
-//     document.getElementById(hooli).style.display = 'none';
-//     document.getElementById(hip).style.display = 'none';
-// }
-
-// document.getElementById('.high_class').addEventListener('click',function(e){
-//     swap('high_class','hooli', 'hip');
-// });
-
-// function swap(high_class, hooli, hip) {
-//     document.getElementById(high_class).style.display = 'none';
-//     document.getElementById(hooli).style.display = 'block';
-//     document.getElementById(hip).style.display = 'none';
-// }
-
-// document.getElementById('.hooli').addEventListener('click',function(e){
-//     swap('high_class','hooli', 'hip');
-// });
-
-// function swap(high_class, hooli, hip) {
-//     document.getElementById(high_class).style.display = 'none';
-//     document.getElementById(hooli).style.display = 'none';
-//     document.getElementById(hip).style.display = 'block';
-// }
-
-// document.getElementById('.hip').addEventListener('click',function(e){
-//     swap('high_class','hooli', 'hip');
-// });
-
-
-
-
-
-
-
-
+}
 
 $(document).ready(function(){
 
+
+  $( "#from" ).datepicker({
+    defaultDate: "+1w",
+    changeMonth: true,
+    numberOfMonths: 3,
+    onClose: function( selectedDate ) {
+      $( "#to" ).datepicker( "option", "minDate", selectedDate );
+    }
+  });
+  $( "#to" ).datepicker({
+    defaultDate: "+1w",
+    changeMonth: true,
+    numberOfMonths: 3,
+    onClose: function( selectedDate ) {
+      $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+    }
+  });
+
+
+  jQuery.fn.center = function () {
+    this.css("position","absolute");
+    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
+      $(window).scrollTop()) + "px");
+    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
+      $(window).scrollLeft()) + "px");
+    return this;
+  }
+
   $(".high_class").click(function(){
-      console.log('clicked')
-      $(".hip").hide();
-      $('.hooli').hide();
+    console.log('clicked')
+    $(".hip").hide();
+    $('.hooli').hide();
+    $('.high_class').center();
+    $(".cal").show();
+
   });
 
   $(".hip").click(function(){
-      console.log('clicked')
-      $(".high_class").hide();
-      $('.hooli').hide();
+    console.log('clicked')
+    $(".high_class").hide();
+    $('.hooli').hide();
+    $('.hip').center();
+    $(".cal").show();
+
   });
 
   $(".hooli").click(function(){
-      console.log('clicked')
-      $(".hip").hide();
-      $('.high_class').hide();
+    console.log('clicked')
+    $(".hip").hide();
+    $('.high_class').hide();
+    $('.hooli').center();
+    $(".cal").show();
+
   });
 
 
 
-      // console.log('working');
-            //declare some variables
-      var getRegionButton = $('#region-button');
-      var regionSelect = $('#region-select');
-      var countrySelect = $('#country-select');
-      var results = $('#results');
-      var data = $('#data');
+      // // console.log('working');
+      //       //declare some variables
+      // var getRegionButton = $('#region-button');
+      // var regionSelect = $('#region-select');
+      // var countrySelect = $('#country-select');
+      // var results = $('#results');
+      // var data = $('#data');
 
-       //add event listener to the get regions buttons on click
-       // getRegionButton.on('click', getRegion);
-       // regionSelect.on('change', getCountries)
+      //  //add event listener to the get regions buttons on click
+      //  // getRegionButton.on('click', getRegion);
+      //  // regionSelect.on('change', getCountries)
 
-      getRegionButton.on('click', function(e){
-        $.ajax({
-          type: 'GET',
-          url: 'http://restcountries.eu/rest/v1/all'
-        })
-        .done(function(response){
-          var regions = [];
-          $.each(response, function(index, item) {
-          if($.inArray(item.region, regions) === -1 && item.region.length >= 1) {
-              regions.push(item.region);
-                    // console.log(regions);
-                  }              
-            
-          });
-           $.each(regions, function(index, value){
-                    // console.log(value);
-                    regionSelect.append('<option>' + value + '</option>');
-                  })              
-        })
-      })
-          
-          regionSelect.on('change', showCountries)
+      // getRegionButton.on('click', function(e){
+      //   $.ajax({
+      //     type: 'GET',
+      //     url: 'http://restcountries.eu/rest/v1/all'
+      //   })
+      //   .done(function(response){
+      //     var regions = [];
+      //     $.each(response, function(index, item) {
+      //     if($.inArray(item.region, regions) === -1 && item.region.length >= 1) {
+      //         regions.push(item.region);
+      //               // console.log(regions);
+      //             }              
 
-          function showCountries(e) {
-            // console.log('showCountries');
-            var regionName = $(this).val();
-            $.ajax({
-              type: 'GET',
-              url: 'http://restcountries.eu/rest/v1/region/' + regionName
-            })
+      //     });
+      //      $.each(regions, function(index, value){
+      //               // console.log(value);
+      //               regionSelect.append('<option>' + value + '</option>');
+      //             })              
+      //   })
+      // })
 
-            .done(function(response){
-            // console.log(response);
-              $.each(response, function(index, value){
-                countrySelect.append('<option>' + value.name   + '</option>');
-                //get country info to print to the console 
-              })
-            })
-          }
+      //     regionSelect.on('change', showCountries)
 
-          countrySelect.on('change', showCountryData);
+      //     function showCountries(e) {
+      //       // console.log('showCountries');
+      //       var regionName = $(this).val();
+      //       $.ajax({
+      //         type: 'GET',
+      //         url: 'http://restcountries.eu/rest/v1/region/' + regionName
+      //       })
 
-          function showCountryData(e) {
+      //       .done(function(response){
+      //       // console.log(response);
+      //         $.each(response, function(index, value){
+      //           countrySelect.append('<option>' + value.name   + '</option>');
+      //           //get country info to print to the console 
+      //         })
+      //       })
+      //     }
 
-            $.ajax({
-              type: 'GET',
-              url: 'http://restcountries.eu/rest/v1/name/' + $('#country-select').val()
-            })
-            .done(function(response){
-              $.each(response, function(index, value){
-                console.log(value);
-                $('#result').append('<h2>' + 'Country: ' + value.name + '</h2>');
-                  $('#result').append('<h3>' + 'Region: ' + value.region + '</h3>');
-                   $('#result').append('<h4>' + 'Capital: ' + value.capital + '</h4>');
-                    $('#result').append('<h5>' + 'Population: ' + value.population + '</h5');
-                      $('#result').append('<h6>' + 'Language: ' + value.languages + '</h6>');
-            })
-                
-            })
-              // console.log(name);
-           
-          }
-         
-         //when select countries show info on page 
-         //get weather to show on page when country selected 
-         //
+      //     countrySelect.on('change', showCountryData);
+
+      //     function showCountryData(e) {
+
+      //       $.ajax({
+      //         type: 'GET',
+      //         url: 'http://restcountries.eu/rest/v1/name/' + $('#country-select').val()
+      //       })
+      //       .done(function(response){
+      //         $.each(response, function(index, value){
+      //           console.log(value);
+      //           $('#result').append('<h2>' + 'Country: ' + value.name + '</h2>');
+      //             $('#result').append('<h3>' + 'Region: ' + value.region + '</h3>');
+      //              $('#result').append('<h4>' + 'Capital: ' + value.capital + '</h4>');
+      //               $('#result').append('<h5>' + 'Population: ' + value.population + '</h5');
+      //                 $('#result').append('<h6>' + 'Language: ' + value.languages + '</h6>');
+      //       })
+
+      //       })
+      //         // console.log(name);
+
+      //     }
+
+      //    //when select countries show info on page 
+      //    //get weather to show on page when country selected 
+      //    //
+
+
       
 
     });

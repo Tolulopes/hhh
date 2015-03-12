@@ -55,6 +55,11 @@
    background-image: url('hipster.jpg');
    background-repeat: no-repeat;
 }
+
+.cal {
+  display: none;
+}
+
 body {
    border-width: 0px;
    padding: 0px;
